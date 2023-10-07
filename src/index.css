@@ -62,9 +62,10 @@ body {
 
 .dashboard-container > .contact-list {
   flex: 2;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
 }
+
 .dashboard-container > .conversation-window {
   flex: 8;
   display: flex;
@@ -73,6 +74,14 @@ body {
 
 .dashboard-container > .contact-list > .contact-list-wrapper {
   padding: 8px 4px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  flex: 9;
+}
+.dashboard-container > .contact-list > .pagination-wrapper {
+  padding: 12px 18px;
+  display: flex;
+  justify-content: center;
 }
 .user-list-card {
   cursor: pointer;
