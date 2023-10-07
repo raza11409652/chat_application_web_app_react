@@ -15,6 +15,7 @@ export const UsersListContainer: React.FC<Props> = ({ onUserSelect }) => {
     dispatch(GetUsersAction({ page: 1 }));
   }, [dispatch]);
   const onUserCardClick = (u: User) => onUserSelect(u);
+  //!! TODO - pagination need to be implemented  skipped  for now
   return (
     <>
       {loading && <Spin />}

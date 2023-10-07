@@ -24,6 +24,7 @@ export const MessageContainer: React.FC<Props> = ({ user }) => {
         </div>
         <div className="body">
           {/* !! optimized list implementation should be here */}
+          //!! TODO - pagination need to be implemented  skipped  for now 
           {data &&
             data.messages.map((a) => (
               <ChatBubble loggedInUser={loggedInUser} message={a} key={a._id} />
