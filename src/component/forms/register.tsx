@@ -30,7 +30,7 @@ export const RegisterForm = () => {
               name={"password"}
               rules={[{ required: true, message: "Required" }]}
             >
-              <Input placeholder="Enter your password" />
+              <Input placeholder="Enter your password" type="password" />
             </Form.Item>
             <Form.Item>
               <Button type="primary" htmlType="submit" loading={loading}>
