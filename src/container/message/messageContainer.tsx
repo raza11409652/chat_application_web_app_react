@@ -23,6 +23,7 @@ export const MessageContainer: React.FC<Props> = ({ user }) => {
           <h5>{user.username}</h5>
         </div>
         <div className="body">
+          {/* !! optimized list implementation should be here */}
           {data &&
             data.messages.map((a) => (
               <ChatBubble loggedInUser={loggedInUser} message={a} key={a._id} />
