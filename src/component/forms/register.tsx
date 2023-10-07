@@ -33,6 +33,12 @@ export const RegisterForm = () => {
               <Input placeholder="Enter your password" type="password" />
             </Form.Item>
             <Form.Item>
+              <Typography.Text style={{ color: "#999" }}>
+                Please use strong password which contains 1 upper case 1 Lower
+                case 1 Symbol and min length 8 character
+              </Typography.Text>
+            </Form.Item>
+            <Form.Item>
               <Button type="primary" htmlType="submit" loading={loading}>
                 Register
               </Button>

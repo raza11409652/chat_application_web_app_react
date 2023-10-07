@@ -7,6 +7,7 @@ import {
 import { AuthResponse, User, UserLogin, UserRegister } from "../types";
 import { loginApi } from "../apis/auth/login";
 import { registerApi } from "../apis/auth/register";
+import handleAxiosError from "../utils/handleAxiosError";
 
 interface Props {
   user?: User;
@@ -24,8 +25,10 @@ export const LoginAction = createAsyncThunk<AuthResponse, UserLogin>(
     try {
       const response = await loginApi(v);
       return response;
-    } catch (e) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (e: any) {
       //   throw e;
+      handleAxiosError(e);
       return rejectWithValue("Error");
     }
   }
@@ -36,8 +39,10 @@ export const RegisterAction = createAsyncThunk<AuthResponse, UserRegister>(
     try {
       const response = await registerApi(v);
       return response;
-    } catch (e) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (e: any) {
       //   throw e;
+      handleAxiosError(e);
       return rejectWithValue("Error");
     }
   }
