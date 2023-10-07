@@ -3,9 +3,10 @@ import { Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { LoginContainer } from "../container/login";
 import { RegisterContainer } from "../container/register";
+import { DashboardContainer } from "../container/dashboard";
 
 export const AppRoutes = () => {
-  const auth = false;
+  const auth = true;
   return (
     <>
       <Suspense
@@ -18,7 +19,11 @@ export const AppRoutes = () => {
         <BrowserRouter>
           <Routes>
             {auth ? (
-              <></>
+              <>
+                <Route path="/">
+                  <Route index element={<DashboardContainer />} />
+                </Route>
+              </>
             ) : (
               <>
                 <Route path="/">

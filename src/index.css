@@ -36,3 +36,21 @@ body {
 .auth-container > .auth-form > .header > span {
   font-size: 18px;
 }
+
+.dashboard-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex: 10;
+}
+
+.dashboard-container > .contact-list {
+  flex: 2;
+}
+.dashboard-container > .conversation-window {
+  flex: 6;
+}
+.dashboard-container > .profile-window {
+  flex: 2;
+}
