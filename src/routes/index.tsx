@@ -1,21 +1,19 @@
 import Spin from "antd/es/spin";
 import { Suspense } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { LoginContainer } from "../container/login";
 import { RegisterContainer } from "../container/register";
 import { DashboardContainer } from "../container/dashboard";
+import { useAppSelector } from "../slice";
+import useSocket from "../hooks/userSocket";
 
 export const AppRoutes = () => {
-  const auth = true;
+  const auth = useAppSelector((a) => a.authReducer.auth);
+  useSocket();
+
   return (
     <>
-      <Suspense
-        fallback={
-          <div className="row-flex-col">
-            <Spin />
-          </div>
-        }
-      >
+      <Suspense fallback={<Spin />}>
         <BrowserRouter>
           <Routes>
             {auth ? (
@@ -32,6 +30,7 @@ export const AppRoutes = () => {
                 </Route>
               </>
             )}
+            <Route path="*" element={<Navigate to={"/"} />} />
           </Routes>
         </BrowserRouter>
       </Suspense>
