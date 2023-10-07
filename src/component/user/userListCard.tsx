@@ -1,6 +1,6 @@
 import React from "react";
 import { User } from "../../types";
-import { Card } from "antd";
+import { Avatar, Card } from "antd";
 
 interface Props {
   user: User;
@@ -15,8 +15,13 @@ export const UserListCard: React.FC<Props> = ({ user, onClick, selected }) => {
       // bordered={false}
       children={
         <>
-          <p>{user.name}</p>
-          <p>@{user.username}</p>
+          <div style={{ flex: "row", display: "flex", alignItems: "center" }}>
+            <Avatar
+              style={{ background: user.avatarBackground }}
+              children={<>{user.username[0]}</>}
+            />
+            <p style={{ marginLeft: "4px" }}>@{user.username}</p>
+          </div>
         </>
       }
     ></Card>
