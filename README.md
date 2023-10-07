@@ -1,27 +1,15 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# step to  start app in development
+   - Make sure to start backend service first , You can find backend code at github  
+   [link here](https://github.com/raza11409652/chat_application_node_js_backend) 
+   - Git clone this app into your local machine
+   - Note Local machine should have node js version >16
+   - now you need to move to the local directory 
+   > cd chat-application-web-app-react 
+   - install the the dependencies
+   > npm install
+   - copy .env.example file to .env
+   > cp .env.example .env
+   - If you have made any changes in backend service port, make sure to change accordingly in .env file 
+   - Now start application
+   > npm run dev
+   - App will start at 5173 port by default if you want to change this you can pass --port in while running npm run dev
